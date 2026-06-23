@@ -445,7 +445,7 @@
         <div id="videoPlayerBody">
             <!-- Video + AI annotation overlay -->
             <div class="relative">
-                <video id="inspectionVideo" muted playsinline preload="auto"></video>
+                <video id="inspectionVideo" muted playsinline preload="metadata"></video>
                 <div id="videoOverlayLayer"></div>
                 <div class="absolute top-2 left-2 bg-black/60 text-white text-[9px] mono px-2 py-1 rounded flex items-center gap-2 pointer-events-none">
                     <span id="hudTimecode">00:00:00:00</span><span class="text-slate-400">|</span><span id="hudGps">--</span>
@@ -1008,10 +1008,7 @@
             // The MP4 sits next to this HTML; exact filename prefix is unknown,
             // so several candidates are tried before offering a file picker.
             videoCandidates: [
-                "geoDVR_Recording_REC3.mp4",
-                "1781191408646_geoDVR_Recording_REC3.mp4",
-                "1781191408645_geoDVR_Recording_REC3.mp4",
-                "1781191408649_geoDVR_Recording_REC3.mp4"
+               "https://YOUR-STORE.public.blob.vercel-storage.com/videos/geoDVR_Recording_REC3.mp4"
             ],
             videoDuration: REAL_EST_DURATION,
             heroImg: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=700&q=70",
