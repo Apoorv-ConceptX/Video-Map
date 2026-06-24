@@ -972,11 +972,11 @@
         function buildRealRoute(rec) {
             const anns = [];
             rec.verified.forEach((v, i) => anns.push(Object.assign({
-                id:`ANN-${rec.key}-V${i+1}`, vsec:v.vsec, type:v.type,
+                id:`ANN-${rec.key}-V${i+1}`, vsec:v.vsec, type:v.type, boxX:v.boxX, boxY:v.boxY,
                 surveyCoord:[v.lon, v.lat], thumb:REC_HERO
             }, VERIFIED_DEFAULTS)));
             rec.candidates.forEach((c, i) => anns.push(Object.assign({
-                id:`ANN-${rec.key}-C${i+1}`, vsec:c.vsec, type:c.type, thumb:REC_HERO
+                id:`ANN-${rec.key}-C${i+1}`, vsec:c.vsec, type:c.type, boxX:c.boxX, boxY:c.boxY, thumb:REC_HERO
             }, CANDIDATE_DEFAULTS)));
             return {
                 id:`RT-${rec.key}`, name:rec.name, state:"Virginia",
@@ -1824,7 +1824,7 @@
                 const box = document.createElement('div');
                 box.className = 'vid-ann-box';
                 box.dataset.ann = ann.id;
-                box.style.left = (12 + (h % 46)) + '%';
+                box.style.left = (ann.boxX != null ? ann.boxX : (12 + (h % 46))) + '%';
                 box.style.top = (18 + ((h >> 3) % 38)) + '%';
                 box.style.width = (14 + (h % 14)) + '%';
                 box.style.height = (16 + ((h >> 5) % 18)) + '%';
